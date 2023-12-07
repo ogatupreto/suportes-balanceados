@@ -1,0 +1,60 @@
+#btn-input:hover {
+    text-shadow: rgb(95, 106, 188) 0 0 8px;
+    font-weight: 500;
+}
+
+#div-input {
+    position: relative;
+    width: 600px;
+    margin: auto;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
+#texts {
+    position: relative;
+    width: 600px;
+    margin: auto;
+}
+
+#texts p {
+    text-align: justify;
+}
+
+#retorno {
+    position: relative;
+    margin: auto;
+    width: 150px;
+    background-color: rgb(70, 211, 81);
+    border: 1px solid rgb(113, 88, 188);
+    padding: 10px;
+    border-radius: 36px;
+    text-align: center;
+    animation: 1s forwards fadeout;
+    animation-delay: 2s;
+}
+@keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+#retornoNegativo {
+    position: relative;
+    margin: auto;
+    width: 150px;
+    font: 800;
+    color: white;
+    background-color: rgb(253, 26, 26);
+    border: 1px solid rgb(113, 88, 188);
+    padding: 10px;
+    border-radius: 36px;
+    text-align: center;
+    animation: 1s forwards fadeout;
+    animation-delay: 2s;
+}
+@keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
