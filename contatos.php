@@ -17,7 +17,10 @@
     <!-- <button type="submit" class="input-group-text flex-nowrap" id="btn-input" onclick="post()">POST</button> -->
     
     <ul id="ul-contatos" class="list-group list-group-horizontal">
-        <!-- li gerados automaticamente em JS-->
+        <ul id="id0" class="list-group">
+
+        </ul>
+
     </ul>
 
     <br>
@@ -34,36 +37,26 @@
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data.length);
-            console.log(data[0]);
-            console.log(data[1]);
-            console.log(data[2]);
+            for (var i = 0; i < data.length; i++) {
+                var raiz = document.getElementById('ul-contatos').innerHTML
+                var ul = document.createElement('ul')
+                ul.id = `id${i}`
+                
+
+                var ul = document.getElementById(`id${i}`).innerHTML
+                ul += `<li id='id${i}'></li>`
+
+                ul += '<li class="list-group-item">' + data[i].id + '</li>'
+                document.getElementById('ul-contatos1').innerHTML = ul
+                ul += '<li class="list-group-item">' + data[i].nome + '</li>'
+                document.getElementById('ul-contatos1').innerHTML = ul
+                ul += '<li class="list-group-item">' + data[i].email + '</li>'
+                document.getElementById('ul-contatos1').innerHTML = ul
+                ul += '<li class="list-group-item">' + data[i].telefone + '</li>'
+                document.getElementById('ul-contatos1').innerHTML = ul
+            }
             
         })
-        function get() {
-            fetch('http://127.0.0.1:3000/clients', {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(data => {
-                var btn = document.getElementById('btn-input').value;
-                var ul = document.getElementById('ul-contatos').innerHTML;
-                
-                for (var i = 0; i <= data.length; i++) {
-                    var id      = data[i].id;
-                    var nome    = data[i].nome;
-                    var email   = data[i].email;
-                    var tel     = data[i].telefone;
-
-                    ul += '<li class="list-group-items">' + id + "</li>";
-                    ul += '<li class="list-group-items">' + nome + "</li>";
-                    ul += '<li class="list-group-items">' + email + "</li>";
-                    ul += '<li class="list-group-items">' + tel + "</li>";
-
-                    document.getElementById('ul-contatos').innerHTML = ul;
-                }
-            });
-        }
     </script>
 
 </body>
