@@ -7,12 +7,14 @@ const http = require('node:http');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World');
 });
+
+
+
 
 app.use(express.json());
 app.use(cors());
@@ -31,11 +33,11 @@ app.get("/clients/:id", function(req, res) {
 });
 
 app.post("/clients", function(req, res) {
-    const { name, email } = req.body;
+    const { id, nome, email, telefone } = req.body;
 
     // salvar
 
-    res.json({name, email});
+    res.json({id, nome, email, telefone});
 });
 
 app.put("/clients/:id", function(req, res) {

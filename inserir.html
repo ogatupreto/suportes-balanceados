@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewport</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" href="server.js">
+</head>
+<body>
+    <a href="contatos.php">Lista de Contatos</a>
+    <h1>Novo contato</h1>
+    
+    <table>
+        <tr>
+            <td>Ação</td>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Email</td>
+            <td>Telefone</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>data.id</td>
+            <td>data.nome</td>
+            <td>data.email</td>
+            <td>data.telefone</td>
+        </tr>
+    </table>
+    
+
+
+    <script>
+        function getId() {
+            fetch("http://127.0.0.1:3000/clients", {
+                method: "GET"
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data[1].id)
+            })
+        }
+        function inserir() {
+            fetch("http://127.0.0.1:3000/clients", {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+
+            })
+        }
+    </script>
+</body>
+</html>

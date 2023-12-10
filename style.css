@@ -58,3 +58,9 @@ h1 {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+#btn-edit {
+    border: none;
+    margin: none;
+    padding: none;
+}
